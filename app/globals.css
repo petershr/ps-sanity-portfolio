@@ -4,15 +4,32 @@
 
 @layer utilities {
   .animated-gradient-bg {
-    background: linear-gradient(-45deg, #ffffff, #fdf4ff, #e0f2fe, #fce7f3, #ffffff);
-    background-size: 400% 400%;
-    animation: colorful-gradient 15s ease infinite;
+    background-color: #fafafa;
+    background-image: 
+      radial-gradient(circle at center, rgba(147, 197, 253, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at center, rgba(233, 213, 255, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at center, rgba(110, 231, 183, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at center, rgba(244, 114, 182, 0.3) 0%, transparent 50%);
+    background-size: 200% 200%, 160% 180%, 180% 160%, 150% 150%;
+    animation: flow 25s infinite linear;
   }
 
-  @keyframes colorful-gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  @keyframes flow {
+    0% {
+      background-position: 0% 0%, 100% 50%, 50% 100%, 0% 100%;
+    }
+    25% {
+      background-position: 50% 100%, 0% 0%, 100% 50%, 100% 0%;
+    }
+    50% {
+      background-position: 100% 50%, 0% 100%, 0% 0%, 50% 50%;
+    }
+    75% {
+      background-position: 50% 0%, 100% 50%, 50% 100%, 0% 50%;
+    }
+    100% {
+      background-position: 0% 0%, 100% 50%, 50% 100%, 0% 100%;
+    }
   }
 
   .interactive-hover {
