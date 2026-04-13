@@ -45,10 +45,10 @@ export default async function IndexRoute({children}: {children: React.ReactNode}
   const {data} = await sanityFetch({query: settingsQuery})
   return (
     <>
-      <div className="flex min-h-screen flex-col bg-white text-black">
+      <div className="flex min-h-screen flex-col text-black animated-gradient-bg">
         <Navbar data={data} />
         <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">{children}</div>
-        <footer className="bottom-0 w-full bg-white py-12 text-center md:py-20">
+        <footer className="bottom-0 w-full bg-white/30 backdrop-blur-md py-12 text-center md:py-20">
           {data?.footer && (
             <CustomPortableText
               id={data._id}

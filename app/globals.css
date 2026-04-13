@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .animated-gradient-bg {
+    background: linear-gradient(-45deg, #ffffff, #fdf4ff, #e0f2fe, #fce7f3, #ffffff);
+    background-size: 400% 400%;
+    animation: colorful-gradient 15s ease infinite;
+  }
+
+  @keyframes colorful-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .interactive-hover {
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 active:scale-95 cursor-pointer;
+  }
+}
