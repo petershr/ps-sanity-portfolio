@@ -48,16 +48,10 @@ export default async function IndexRoute({children}: {children: React.ReactNode}
       <div className="flex min-h-screen flex-col text-black animated-gradient-bg">
         <Navbar data={data} />
         <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">{children}</div>
-        <footer className="bottom-0 w-full bg-white/30 backdrop-blur-md py-12 text-center md:py-20">
-          {data?.footer && (
-            <CustomPortableText
-              id={data._id}
-              type={data._type}
-              path={['footer']}
-              paragraphClasses="text-md md:text-xl"
-              value={data.footer as unknown as PortableTextBlock[]}
-            />
-          )}
+        <footer className="bottom-0 w-full bg-white/30 backdrop-blur-md py-12 flex items-center justify-center gap-x-8 md:gap-x-12">
+          <a href="https://drive.google.com/file/d/1mXN311_FVeiH_UW5PC_II0cUNLirjQIf/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black font-semibold text-lg md:text-xl interactive-hover">Resume</a>
+          <a href="https://www.linkedin.com/in/peter-shr/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#0b66c2] font-semibold text-lg md:text-xl interactive-hover">LinkedIn</a>
+          <a href="https://github.com/petershr" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black font-semibold text-lg md:text-xl interactive-hover">GitHub</a>
         </footer>
         <Suspense>
           <IntroTemplate />
