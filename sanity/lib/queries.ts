@@ -13,7 +13,6 @@ export const homePageQuery = defineQuery(`
         coverImage,
         overview,
         "slug": slug.current,
-        tags,
         title,
       }
     },
@@ -36,15 +35,12 @@ export const projectBySlugQuery = defineQuery(`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
     _type,
-    client,
     coverImage,
     description,
     duration,
     gallery,
     overview,
-    site,
     "slug": slug.current,
-    tags,
     title,
   }
 `)

@@ -71,26 +71,6 @@ export default defineType({
       title: 'Duration',
       type: 'duration',
     }),
-    /* 
-    defineField({
-      name: 'client',
-      title: 'Client',
-      type: 'string',
-    }),
-    defineField({
-      name: 'site',
-      title: 'Site',
-      type: 'url',
-    }),
-    defineField({
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        layout: 'tags',
-      },
-    }),*/
     defineField({
       name: 'gallery',
       title: 'Project Gallery',
