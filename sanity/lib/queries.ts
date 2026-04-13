@@ -40,6 +40,7 @@ export const projectBySlugQuery = defineQuery(`
     coverImage,
     description,
     duration,
+    gallery,
     overview,
     site,
     "slug": slug.current,

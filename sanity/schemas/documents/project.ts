@@ -71,6 +71,7 @@ export default defineType({
       title: 'Duration',
       type: 'duration',
     }),
+    /* 
     defineField({
       name: 'client',
       title: 'Client',
@@ -88,6 +89,27 @@ export default defineType({
       of: [{type: 'string'}],
       options: {
         layout: 'tags',
+      },
+    }),*/
+    defineField({
+      name: 'gallery',
+      title: 'Project Gallery',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+          ],
+        }),
+      ],
+      options: {
+        layout: 'grid',
       },
     }),
     defineField({

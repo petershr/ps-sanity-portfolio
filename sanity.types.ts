@@ -90,9 +90,15 @@ export type Project = {
     _type: 'image'
   }
   duration?: Duration
-  client?: string
-  site?: string
-  tags?: Array<string>
+  gallery?: Array<{
+    asset?: SanityImageAssetReference
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    alt?: string
+    _type: 'image'
+    _key: string
+  }>
   description?: Array<
     | {
         children?: Array<{
@@ -471,7 +477,7 @@ export type HomePageQueryResult = {
       _key: string
     }> | null
     slug: string | null
-    tags: Array<string> | null
+    tags: null
     title: string | null
   }> | null
   title: string | null
@@ -536,11 +542,11 @@ export type PagesBySlugQueryResult = {
 
 // Source: sanity/lib/queries.ts
 // Variable: projectBySlugQuery
-// Query: *[_type == "project" && slug.current == $slug][0] {    _id,    _type,    client,    coverImage,    description,    duration,    overview,    site,    "slug": slug.current,    tags,    title,  }
+// Query: *[_type == "project" && slug.current == $slug][0] {    _id,    _type,    client,    coverImage,    description,    duration,    gallery,    overview,    site,    "slug": slug.current,    tags,    title,  }
 export type ProjectBySlugQueryResult = {
   _id: string
   _type: 'project'
-  client: string | null
+  client: null
   coverImage: {
     asset?: SanityImageAssetReference
     media?: unknown
@@ -582,6 +588,15 @@ export type ProjectBySlugQueryResult = {
       }
   > | null
   duration: Duration | null
+  gallery: Array<{
+    asset?: SanityImageAssetReference
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    alt?: string
+    _type: 'image'
+    _key: string
+  }> | null
   overview: Array<{
     children?: Array<{
       marks?: Array<string>
@@ -596,9 +611,9 @@ export type ProjectBySlugQueryResult = {
     _type: 'block'
     _key: string
   }> | null
-  site: string | null
+  site: null
   slug: string | null
-  tags: Array<string> | null
+  tags: null
   title: string | null
 } | null
 
@@ -666,7 +681,7 @@ declare module '@sanity/client' {
   interface SanityQueries {
     '\n  *[_type == "home"][0]{\n    _id,\n    _type,\n    overview,\n    showcaseProjects[]{\n      _key,\n      ...@->{\n        _id,\n        _type,\n        coverImage,\n        overview,\n        "slug": slug.current,\n        tags,\n        title,\n      }\n    },\n    title,\n  }\n': HomePageQueryResult
     '\n  *[_type == "page" && slug.current == $slug][0] {\n    _id,\n    _type,\n    body,\n    overview,\n    title,\n    "slug": slug.current,\n  }\n': PagesBySlugQueryResult
-    '\n  *[_type == "project" && slug.current == $slug][0] {\n    _id,\n    _type,\n    client,\n    coverImage,\n    description,\n    duration,\n    overview,\n    site,\n    "slug": slug.current,\n    tags,\n    title,\n  }\n': ProjectBySlugQueryResult
+    '\n  *[_type == "project" && slug.current == $slug][0] {\n    _id,\n    _type,\n    client,\n    coverImage,\n    description,\n    duration,\n    gallery,\n    overview,\n    site,\n    "slug": slug.current,\n    tags,\n    title,\n  }\n': ProjectBySlugQueryResult
     '\n  *[_type == "settings"][0]{\n    _id,\n    _type,\n    footer,\n    menuItems[]{\n      _key,\n      ...@->{\n        _type,\n        "slug": slug.current,\n        title\n      }\n    },\n    ogImage,\n  }\n': SettingsQueryResult
     '\n  *[_type == $type && defined(slug.current)]{"slug": slug.current}\n': SlugsByTypeQueryResult
   }

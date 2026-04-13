@@ -70,7 +70,8 @@ export default async function ProjectSlugRoute({params}: Props) {
 
   const startYear = duration?.start ? new Date(duration.start).getFullYear() : undefined
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
-
+  const startPretty = duration?.start ? new Date(duration.start).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }) : undefined
+  const endPretty = duration?.end ? new Date(duration.end).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }) : 'Present'
   return (
     <div>
       <div className="mb-20 space-y-6">
@@ -93,28 +94,31 @@ export default async function ProjectSlugRoute({params}: Props) {
             classesWrapper="relative aspect-[16/9]"
           />
 
-          <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+          <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-1 lg:divide-x lg:divide-y-0">
             {/* Duration */}
             {!!(startYear && endYear) && (
               <div className="p-3 lg:p-4">
                 <div className="text-xs md:text-sm">Duration</div>
                 <div className="text-md md:text-lg">
-                  <span data-sanity={dataAttribute?.('duration.start')}>{startYear}</span>
+                  <span data-sanity={dataAttribute?.('duration.start')}>{startPretty}</span>
                   {' - '}
-                  <span data-sanity={dataAttribute?.('duration.end')}>{endYear}</span>
+                  <span data-sanity={dataAttribute?.('duration.end')}>{endPretty}</span>
                 </div>
               </div>
             )}
 
             {/* Client */}
+            {/*
             {client && (
               <div className="p-3 lg:p-4">
                 <div className="text-xs md:text-sm">Client</div>
                 <div className="text-md md:text-lg">{client}</div>
               </div>
             )}
+            */}
 
             {/* Site */}
+            {/*
             {site && (
               <div className="p-3 lg:p-4">
                 <div className="text-xs md:text-sm">Site</div>
@@ -125,8 +129,10 @@ export default async function ProjectSlugRoute({params}: Props) {
                 )}
               </div>
             )}
+            */}
 
             {/* Tags */}
+            {/*
             <div className="p-3 lg:p-4">
               <div className="text-xs md:text-sm">Tags</div>
               <div className="text-md flex flex-row flex-wrap md:text-lg">
@@ -137,6 +143,7 @@ export default async function ProjectSlugRoute({params}: Props) {
                 ))}
               </div>
             </div>
+            */}
           </div>
         </div>
 
@@ -150,6 +157,18 @@ export default async function ProjectSlugRoute({params}: Props) {
             value={description as any}
           />
         )}
+        {/* 2-Column Gallery Grid */}
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 mb-10">
+          {data?.gallery?.map((image, index) => (
+            <div key={index} className="relative overflow-hidden rounded-xl bg-gray-50 border">
+              <ImageBox
+                image={image}
+                alt={image.alt || 'Project gallery image'}
+                classesWrapper="aspect-[4/3]" 
+              />
+            </div>
+          ))}
+        </div>
       </div>
       <div className="absolute left-0 w-screen border-t" />
     </div>
