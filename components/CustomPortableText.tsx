@@ -19,9 +19,21 @@ export function CustomPortableText({
 }) {
   const components: PortableTextComponents = {
     block: {
-      normal: ({children}) => {
+      normal: ({children, value}) => {
+        // Detect "fake" headers that are just bold normal text
+        const textContent = (value as any)?.children?.map((c: any) => c.text).join('')?.trim() || '';
+        const isBoldHeading = (value as any)?.children?.some((c: any) => c.marks?.includes('strong')) && textContent.length < 40;
+        
+        if (isBoldHeading && !textContent.startsWith('•')) {
+          return <p className="font-extrabold text-2xl mt-10 mb-4 text-black tracking-tight">{children}</p>
+        }
+        
         return <p className={paragraphClasses}>{children}</p>
       },
+      h1: ({children}) => <h1 className="text-4xl font-extrabold mt-12 mb-6 text-black">{children}</h1>,
+      h2: ({children}) => <h2 className="text-3xl font-extrabold mt-12 mb-6 text-black">{children}</h2>,
+      h3: ({children}) => <h3 className="text-2xl font-extrabold mt-10 mb-4 text-black">{children}</h3>,
+      h4: ({children}) => <h4 className="text-xl font-bold mt-8 mb-4 text-black">{children}</h4>,
     },
     marks: {
       link: ({children, value}) => {

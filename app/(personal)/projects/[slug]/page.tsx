@@ -87,8 +87,8 @@ export default async function ProjectSlugRoute({params}: Props) {
         <div className="rounded-md border-0 border-transparent">
           {/* Image  */}
           {data?.title?.toLowerCase().includes('joystick') || data?.title?.toLowerCase().includes('hall effect') ? (
-            <div className="overflow-hidden rounded-2xl w-full flex justify-center bg-gray-50 items-center max-h-[65vh]">
-              <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto object-cover" />
+            <div className="overflow-hidden rounded-3xl inline-block">
+              <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto max-h-[65vh] block" />
             </div>
           ) : (
             <ImageBox

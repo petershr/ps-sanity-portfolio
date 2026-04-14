@@ -94,9 +94,9 @@ export async function HomePage({data}: HomePageProps) {
                       </div>
                     </div>
                  </div>
-                 <div className="w-full xl:w-1/2 flex items-start justify-center p-2">
-                    <div className="overflow-hidden rounded-2xl w-full flex justify-center bg-gray-50 items-center">
-                      <img src="/joystick.png" className="max-w-full h-auto max-h-[350px] object-cover" alt="Joystick" />
+                 <div className="w-full xl:w-1/2 flex items-start justify-start p-2">
+                    <div className="overflow-hidden rounded-2xl inline-block">
+                      <img src="/joystick.png" className="max-w-full h-auto max-h-[350px] block" alt="Joystick" />
                     </div>
                  </div>
              </Link>
@@ -104,9 +104,9 @@ export async function HomePage({data}: HomePageProps) {
 
           {/* Egyptian Wars Project */}
           <Link className="flex flex-col xl:flex-row p-4 transition hover:bg-white/40 xl:w-1/2 w-full gap-x-6 items-stretch" href="/games/egyptian-wars">
-                 <div className="w-full xl:w-1/2 flex items-start justify-center p-2">
-                    <div className="overflow-hidden rounded-2xl w-full flex justify-center bg-gray-50 items-center shadow-sm">
-                      <img src="https://deckofcardsapi.com/static/img/back.png" className="max-w-full h-auto max-h-[300px] object-cover" alt="Egyptian Wars Thumbnail" />
+                 <div className="w-full xl:w-1/2 flex items-start justify-start p-2">
+                    <div className="overflow-hidden rounded-2xl inline-block">
+                      <img src="https://deckofcardsapi.com/static/img/back.png" className="max-w-full h-auto max-h-[300px] block" alt="Egyptian Wars Thumbnail" />
                     </div>
                  </div>
                  <div className="flex w-full xl:w-1/2 items-stretch pt-2">
