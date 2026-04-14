@@ -172,7 +172,7 @@ rules.html styling
 .r-main {
     background-color: #91c6ff;
     width: 100%;
-    overflow: hidden;
+    overflow-y: auto;
     height: 90vh;
     display: flex;
     background-image:

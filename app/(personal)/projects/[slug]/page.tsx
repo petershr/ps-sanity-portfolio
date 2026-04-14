@@ -84,15 +84,19 @@ export default async function ProjectSlugRoute({params}: Props) {
           description={overview}
         />
 
-        <div className="rounded-md border">
+        <div className="rounded-md border-0 border-transparent">
           {/* Image  */}
-          <ImageBox
-            data-sanity={dataAttribute?.('coverImage')}
-            image={coverImage as any}
-            // @TODO add alt field in schema
-            alt=""
-            classesWrapper="relative aspect-[16/9]"
-          />
+          {data?.title?.toLowerCase().includes('joystick') || data?.title?.toLowerCase().includes('hall effect') ? (
+            <img src="/joystick.png" alt="Joystick Main" className="w-full h-auto object-contain bg-white rounded-2xl" />
+          ) : (
+            <ImageBox
+              data-sanity={dataAttribute?.('coverImage')}
+              image={coverImage as any}
+              // @TODO add alt field in schema
+              alt=""
+              classesWrapper="relative w-full"
+            />
+          )}
 
           <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-1 lg:divide-x lg:divide-y-0">
             {/* Duration */}
