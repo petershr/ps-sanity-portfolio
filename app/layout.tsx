@@ -1,6 +1,10 @@
 import './globals.css'
-import {IBM_Plex_Mono, Inter, PT_Serif} from 'next/font/google'
+import {IBM_Plex_Mono, Inter, PT_Serif, Geist} from 'next/font/google'
 
+const geist = Geist({
+  variable: '--font-geist',
+  subsets: ['latin'],
+})
 const serif = PT_Serif({
   variable: '--font-serif',
   style: ['normal', 'italic'],
@@ -21,7 +25,7 @@ const mono = IBM_Plex_Mono({
 
 export default async function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${mono.variable} ${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={`${mono.variable} ${sans.variable} ${serif.variable} ${geist.variable}`}>
       <body>{children}</body>
     </html>
   )

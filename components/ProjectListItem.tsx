@@ -31,11 +31,11 @@ function TextBox({project}: {project: ShowcaseProject}) {
     <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
       <div>
         {/* Title */}
-        <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
+        <div className="mb-2 text-xl font-bold font-sans tracking-tight md:text-2xl">
           {project.title}
         </div>
         {/* Overview  */}
-        <div className="font-serif text-gray-500">
+        <div className="font-geist text-gray-500">
           <CustomPortableText
             id={project._id}
             type={project._type}

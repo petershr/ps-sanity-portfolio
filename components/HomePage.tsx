@@ -59,6 +59,34 @@ export async function HomePage({data}: HomePageProps) {
               )
             })}
         </OptimisticSortOrder>
+
+        {/* Egyptian Wars Game */}
+        <Link
+          className="flex flex-col gap-x-5 p-2 transition border-t hover:bg-white/40 xl:flex-row xl:flex-row-reverse"
+          href="/games/egyptian-wars"
+        >
+          <div className="w-full xl:w-9/12 border border-gray-200/50 rounded-md">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-black">
+              <img src="/games/thumbnail.png" alt="Egyptian Wars Thumbnail" className="object-cover w-full h-full" />
+            </div>
+          </div>
+          <div className="flex xl:w-1/4">
+            <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
+              <div>
+                <div className="mb-2 text-xl font-bold font-sans tracking-tight md:text-2xl text-black">
+                  Egyptian Wars
+                </div>
+                <div className="font-geist text-gray-700">
+                  <p>A fast-paced card game built from scratch. Slap your way to victory against a clever AI bot.</p>
+                </div>
+              </div>
+              <div className="mt-4 flex flex-row gap-x-2">
+                <div className="text-sm font-medium lowercase md:text-lg">#game</div>
+                <div className="text-sm font-medium lowercase md:text-lg">#cs50</div>
+              </div>
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   )

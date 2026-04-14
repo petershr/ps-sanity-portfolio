@@ -14,6 +14,7 @@ module.exports = {
       mono: 'var(--font-mono)',
       sans: 'var(--font-sans)',
       serif: 'var(--font-serif)',
+      geist: 'var(--font-geist)',
     },
   },
   plugins: [require('@tailwindcss/typography')],

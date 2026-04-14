@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <!-- bootstrap import method borrowed from finance layout.html -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+    <link href="styles.css" rel="stylesheet">
+
+    <title>Egyptian Wars - Rules</title>
+
+</head>
+
+<body>
+
+    <nav class="bg-dark navbar navbar-expand-md navbar-dark py-3">
+        <div class="container-fluid">
+            <div class="navbar-brand mx-4 fs-1" href="/"><b>EGYPTIAN WARS!</b></div>
+            <div class="navbar-nav ms-auto">
+                <a class="navlink mx-3 px-4 fs-4" href="index.html"><b>PLAY</b></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="r-main">
+        <div class="rules l">
+            <h3 class="inf i text-center"><b>Overview</b></h3>
+            <p class="inf ye">
+                Egyptian Wars, also called Egyptian Rat Screw, is a speed-based card game, in which the player's goal is
+                to win all 52 cards in their hand.
+                To begin, deck is shuffled and divided evenly between each player. Each round, players take turns
+                placing a card from the top of their hand onto the pile.
+                If there is a specific <b>pattern</b>, anyone can slap the pile to win the cards, which are placed at
+                the bottom of their hand. If someone slaps but without
+                a specific pattern present, they must "burn" a card, which means losing a card to the burn pile. These
+                cards are not considered for any patterns and are
+                collected along with the pot by each round's winner. The winner plays the first cards of the next round.
+            </p>
+            <p class="inf ye">
+                Face cards (J, Q, K, A) initiate challenges to the next player, who have 1-4 attempts, respectively, to
+                place another face card. Otherwise, the person who
+                initially placed the face card (the challenger) wins the pile. Note, at any time, players can still slap
+                the pile. The game ends when one player has the
+                entire deck in their hand.
+            </p>
+            <p class="inf tip">
+                Here, you will play 1-on-1 against a robot. Increasing the difficulty will increase its reaction speed.
+                By default, difficulty is set to medium.<br>
+                <b>Press 'j' to play a card and SPACE to slap. Have fun!</b>
+            </p>
+        </div>
+        <div class="rules r">
+            <h3 class="infos i text-center"><b>Patterns to Slap</b></h3>
+            <ul class="info">
+                <li class="info"><b>Double</b> - 2 cards of the same rank in a row</li>
+                <li class="info"><b>Sandwich</b> - 2 cards of the same rank with one card in between</li>
+                <li class="info"><b>Marriage</b> - a King and Queen next to each other</li>
+                <li class="info"><b>Divorce</b> - a King and Queen with one card in between</li>
+                <li class="info"><b>Top & Bottom</b> - the top and bottom card match in rank</li>
+            </ul>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
