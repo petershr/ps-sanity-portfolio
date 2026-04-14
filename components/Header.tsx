@@ -17,10 +17,10 @@ export function Header(props: HeaderProps) {
   return (
     <div className={`${centered ? 'text-center' : 'w-5/6 lg:w-3/5'}`}>
       {/* Title */}
-      {title && <div className="text-3xl font-extrabold tracking-tight md:text-5xl">{title}</div>}
+      {title && <div className="text-3xl font-extrabold tracking-tight md:text-5xl font-sans text-black">{title}</div>}
       {/* Description */}
       {description && (
-        <div className="mt-4 text-pretty font-serif text-xl text-gray-600 md:text-2xl">
+        <div className="mt-4 text-pretty font-geist text-xl text-gray-700 md:text-2xl border-l-4 border-black/10 pl-4 py-1">
           <CustomPortableText id={id} type={type} path={path} value={description} />
         </div>
       )}

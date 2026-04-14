@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function EgyptianWarsGame() {
   return (
-    <div className="mb-20 space-y-6 max-w-[100rem] mx-auto w-full">
-      <div className="flex flex-wrap gap-4 items-center justify-between pt-8 mb-8">
+    <div className="mb-20 max-w-[100rem] mx-auto w-full">
+      <div className="flex flex-wrap gap-4 items-center justify-between mb-8 pb-4">
         <div className="text-3xl font-extrabold tracking-tight md:text-5xl font-sans text-black">Egyptian Wars</div>
         <Link 
           href="/games/index.html" 

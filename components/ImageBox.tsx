@@ -30,7 +30,7 @@ export default function ImageBox({
     >
       {imageUrl && (
         <Image
-          className={classesWrapper?.includes('aspect') ? 'absolute h-full w-full object-contain' : 'w-full h-auto object-contain'}
+          className={classesWrapper?.includes('aspect') ? 'absolute h-full w-full object-cover' : 'w-full h-auto object-contain'}
           alt={alt}
           width={width}
           height={height}

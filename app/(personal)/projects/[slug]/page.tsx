@@ -111,22 +111,24 @@ export default async function ProjectSlugRoute({params}: Props) {
 
         {/* Description */}
         {description && (
-          <CustomPortableText
-            id={data?._id || null}
-            type={data?._type || null}
-            path={['description']}
-            paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
-            value={description as any}
-          />
+          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-6">
+            <CustomPortableText
+              id={data?._id || null}
+              type={data?._type || null}
+              path={['description']}
+              paragraphClasses="!mb-6 leading-relaxed"
+              value={description as any}
+            />
+          </div>
         )}
         {/* 2-Column Gallery Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 mb-10">
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 mb-10">
           {data?.gallery?.map((image, index) => (
-            <div key={index} className="relative overflow-hidden rounded-xl bg-gray-50 border">
+            <div key={index} className="relative overflow-hidden rounded-3xl shadow-sm border border-gray-100">
               <ImageBox
                 image={image}
                 alt={image.alt || 'Project gallery image'}
-                classesWrapper="aspect-[4/3]" 
+                classesWrapper="aspect-square w-full"
               />
             </div>
           ))}
