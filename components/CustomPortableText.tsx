@@ -25,7 +25,7 @@ export function CustomPortableText({
         const isBoldHeading = (value as any)?.children?.some((c: any) => c.marks?.includes('strong')) && textContent.length < 40;
         
         if (isBoldHeading && !textContent.startsWith('•')) {
-          return <p className="font-extrabold text-2xl mt-10 mb-4 text-black tracking-tight">{children}</p>
+          return <p className="font-extrabold text-3xl mt-16 mb-6 text-black tracking-tight">{children}</p>
         }
         
         return <p className={paragraphClasses}>{children}</p>

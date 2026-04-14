@@ -87,9 +87,7 @@ export default async function ProjectSlugRoute({params}: Props) {
         <div className="rounded-md border-0 border-transparent">
           {/* Image  */}
           {data?.title?.toLowerCase().includes('joystick') || data?.title?.toLowerCase().includes('hall effect') ? (
-            <div className="overflow-hidden rounded-3xl inline-block">
-              <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto max-h-[65vh] block" />
-            </div>
+            <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto max-h-[85vh] rounded-3xl mx-auto block shadow-sm border border-gray-100 object-contain" />
           ) : (
             <ImageBox
               data-sanity={dataAttribute?.('coverImage')}
@@ -103,7 +101,7 @@ export default async function ProjectSlugRoute({params}: Props) {
           <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-1 lg:divide-x lg:divide-y-0">
             {/* Duration */}
             {!!(startPretty && endPretty) && (
-              <div className="p-3 lg:p-4">
+              <div className="p-3 lg:p-4 pb-0">
                 <div className="text-xs md:text-sm">Duration</div>
                 <div className="text-md md:text-lg">
                   <span data-sanity={dataAttribute?.('duration.start')}>{startPretty}</span>
@@ -117,7 +115,7 @@ export default async function ProjectSlugRoute({params}: Props) {
 
         {/* Description */}
         {description && (
-          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-6 prose-headings:mt-10 prose-headings:mb-3 prose-p:mt-2 prose-p:mb-1">
+          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-0 -mt-2 prose-headings:mt-16 prose-headings:mb-6 prose-p:mt-2 prose-p:mb-1">
             <CustomPortableText
               id={data?._id || null}
               type={data?._type || null}

@@ -95,9 +95,7 @@ export async function HomePage({data}: HomePageProps) {
                     </div>
                  </div>
                  <div className="w-full xl:w-1/2 flex items-start justify-start p-2">
-                    <div className="overflow-hidden rounded-2xl inline-block">
-                      <img src="/joystick.png" className="max-w-full h-auto max-h-[350px] block" alt="Joystick" />
-                    </div>
+                    <img src="/joystick.png" className="rounded-2xl max-w-full h-auto max-h-[350px] object-contain shadow-sm border border-gray-100" alt="Joystick" />
                  </div>
              </Link>
           )}
@@ -105,9 +103,7 @@ export async function HomePage({data}: HomePageProps) {
           {/* Egyptian Wars Project */}
           <Link className="flex flex-col xl:flex-row p-4 transition hover:bg-white/40 xl:w-1/2 w-full gap-x-6 items-stretch" href="/games/egyptian-wars">
                  <div className="w-full xl:w-1/2 flex items-start justify-start p-2">
-                    <div className="overflow-hidden rounded-2xl inline-block">
-                      <img src="https://deckofcardsapi.com/static/img/back.png" className="max-w-full h-auto max-h-[300px] block" alt="Egyptian Wars Thumbnail" />
-                    </div>
+                    <img src="https://deckofcardsapi.com/static/img/back.png" className="rounded-2xl max-w-full h-auto max-h-[300px] object-contain shadow-sm border border-gray-100" alt="Egyptian Wars Thumbnail" />
                  </div>
                  <div className="flex w-full xl:w-1/2 items-stretch pt-2">
                     <div className="relative flex w-full flex-col justify-between">
