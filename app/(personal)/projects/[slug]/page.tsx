@@ -87,7 +87,7 @@ export default async function ProjectSlugRoute({params}: Props) {
         <div className="rounded-md border-0 border-transparent">
           {/* Image  */}
           {data?.title?.toLowerCase().includes('joystick') || data?.title?.toLowerCase().includes('hall effect') ? (
-            <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto max-h-[85vh] rounded-3xl mx-auto block shadow-sm border border-gray-100 object-contain" />
+            <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto max-h-[85vh] rounded-3xl mr-auto block shadow-sm border border-gray-100 object-contain" />
           ) : (
             <ImageBox
               data-sanity={dataAttribute?.('coverImage')}
@@ -120,7 +120,7 @@ export default async function ProjectSlugRoute({params}: Props) {
               id={data?._id || null}
               type={data?._type || null}
               path={['description']}
-              paragraphClasses="relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-gray-400 before:text-[1.2em] before:leading-none my-2 leading-relaxed"
+              paragraphClasses="relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-gray-400 before:text-[1.2em] before:leading-none my-3 leading-relaxed text-lg md:text-xl lg:text-2xl"
               value={description as any}
             />
           </div>
