@@ -25,12 +25,12 @@ export default function ImageBox({
 
   return (
     <div
-      className={`w-full overflow-hidden rounded-[8px] bg-gray-50 ${classesWrapper}`}
+      className={`w-full overflow-hidden rounded-[8px] bg-transparent ${classesWrapper}`}
       data-sanity={props['data-sanity']}
     >
       {imageUrl && (
         <Image
-          className="absolute h-full w-full object-contain"
+          className={classesWrapper?.includes('aspect') ? 'absolute h-full w-full object-contain' : 'w-full h-auto object-contain'}
           alt={alt}
           width={width}
           height={height}

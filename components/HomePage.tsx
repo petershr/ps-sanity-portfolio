@@ -62,27 +62,23 @@ export async function HomePage({data}: HomePageProps) {
 
         {/* Egyptian Wars Game */}
         <Link
-          className="flex flex-col gap-x-5 p-2 transition border-t hover:bg-white/40 xl:flex-row xl:flex-row-reverse"
+          className="flex flex-col gap-x-5 p-2 transition border-t hover:bg-white/40 xl:flex-row"
           href="/games/egyptian-wars"
         >
-          <div className="w-full xl:w-9/12 border border-gray-200/50 rounded-md">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-black">
-              <img src="/games/thumbnail.png" alt="Egyptian Wars Thumbnail" className="object-cover w-full h-full" />
-            </div>
+          <div className="w-full xl:w-9/12 rounded-md flex items-center justify-center">
+            <img src="https://deckofcardsapi.com/static/img/back.png" alt="Egyptian Wars Thumbnail" className="object-contain w-full h-auto max-h-[500px]" />
           </div>
           <div className="flex xl:w-1/4">
             <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
               <div>
-                <div className="mb-2 text-xl font-bold font-sans tracking-tight md:text-2xl text-black">
+                <div className="mb-2 text-2xl font-bold font-sans tracking-tight md:text-3xl text-black">
                   Egyptian Wars
                 </div>
-                <div className="font-geist text-gray-700">
-                  <p>A fast-paced card game built from scratch. Slap your way to victory against a clever AI bot.</p>
+                <div className="font-geist text-gray-600 text-lg md:text-xl">
+                  <p>I implemented this game with HTML, CSS, and JavaScript. You can check out the rules page, set the difficulty, and play 1-on-1 against the bot with the goal of winning all the cards.</p>
                 </div>
               </div>
               <div className="mt-4 flex flex-row gap-x-2">
-                <div className="text-sm font-medium lowercase md:text-lg">#game</div>
-                <div className="text-sm font-medium lowercase md:text-lg">#cs50</div>
               </div>
             </div>
           </div>
