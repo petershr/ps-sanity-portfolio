@@ -46,11 +46,10 @@ function TextBox({project}: {project: ShowcaseProject}) {
       </div>
       {/* Tags */}
       <div className="mt-4 flex flex-row gap-x-2 items-center flex-wrap gap-y-2">
-        {project.duration?.start && project.duration?.end ? (
-          <div className="text-sm font-medium uppercase text-gray-500 mr-2 bg-gray-100 px-2 py-1 rounded-md">
+        {project.duration?.start ? (
+          <div className="text-sm font-medium uppercase text-gray-500 mr-2 bg-gray-100 px-2 py-1 rounded-md inline-block">
             {new Date(project.duration.start).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })} 
-            {' - '} 
-            {new Date(project.duration.end).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}
+            {project.duration.end ? ' - ' + new Date(project.duration.end).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' }) : null}
           </div>
         ) : null}
         {project.tags?.map((tag, key) => (

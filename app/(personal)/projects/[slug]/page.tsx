@@ -87,14 +87,16 @@ export default async function ProjectSlugRoute({params}: Props) {
         <div className="rounded-md border-0 border-transparent">
           {/* Image  */}
           {data?.title?.toLowerCase().includes('joystick') || data?.title?.toLowerCase().includes('hall effect') ? (
-            <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto max-h-[65vh] object-contain rounded-2xl" />
+            <div className="overflow-hidden rounded-2xl w-full flex justify-center bg-gray-50 items-center max-h-[65vh]">
+              <img src="/joystick.png" alt="Joystick Main" className="max-w-full h-auto object-cover" />
+            </div>
           ) : (
             <ImageBox
               data-sanity={dataAttribute?.('coverImage')}
               image={coverImage as any}
               // @TODO add alt field in schema
               alt=""
-              classesWrapper="relative"
+              classesWrapper="relative w-full"
             />
           )}
 
@@ -115,12 +117,12 @@ export default async function ProjectSlugRoute({params}: Props) {
 
         {/* Description */}
         {description && (
-          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-6 prose-headings:mt-10 prose-headings:mb-4 prose-ul:mb-12 prose-ul:mt-1 prose-li:my-0 prose-p:mb-1 prose-p:mt-4">
+          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-6 prose-headings:mt-10 prose-headings:mb-3 prose-p:mt-2 prose-p:mb-1">
             <CustomPortableText
               id={data?._id || null}
               type={data?._type || null}
               path={['description']}
-              paragraphClasses="!mb-6 leading-relaxed"
+              paragraphClasses="relative pl-6 before:content-['•'] before:absolute before:left-0 before:text-gray-400 before:text-[1.2em] before:leading-none my-2 leading-relaxed"
               value={description as any}
             />
           </div>
