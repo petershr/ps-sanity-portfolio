@@ -39,7 +39,7 @@ export async function HomePage({data}: HomePageProps) {
         />
       )}
       {/* Showcase projects */}
-      <div className="mx-auto max-w-[100rem] rounded-md border bg-white/50 backdrop-blur-sm shadow-sm">
+      <div className="mx-auto max-w-[100rem] rounded-md border bg-white/50 backdrop-blur-sm shadow-sm mb-32">
         <OptimisticSortOrder id={data?._id} path={'showcaseProjects'}>
           {showcaseProjects &&
             showcaseProjects.length > 0 &&
@@ -70,20 +70,20 @@ export async function HomePage({data}: HomePageProps) {
           {/* Joystick Project */}
           {showcaseProjects?.find(p => p.title?.toLowerCase().includes('joystick') || p.title?.toLowerCase().includes('hall effect')) && (
              <Link 
-               className="flex flex-col xl:flex-row p-4 transition hover:bg-white/40 xl:w-1/2 w-full gap-x-6 items-start" 
+               className="flex flex-col xl:flex-row p-4 transition hover:bg-white/40 xl:w-1/2 w-full gap-x-6 items-stretch" 
                href={resolveHref('project', showcaseProjects.find(p => p.title?.toLowerCase().includes('joystick') || p.title?.toLowerCase().includes('hall effect'))?.slug)!}
              >
-                 <div className="flex w-full xl:w-1/2 items-start pt-2">
+                 <div className="flex w-full xl:w-1/2 items-stretch pt-2">
                     <div className="relative flex w-full flex-col justify-between">
                       <div>
                         <div className="mb-2 text-2xl font-bold font-sans tracking-tight md:text-3xl text-black">
                           {showcaseProjects.find(p => p.title?.toLowerCase().includes('joystick') || p.title?.toLowerCase().includes('hall effect'))?.title}
                         </div>
-                        <div className="font-geist text-gray-600 text-lg md:text-xl line-clamp-4">
+                        <div className="font-geist text-gray-600 text-lg md:text-xl">
                            <CustomPortableText value={showcaseProjects.find(p => p.title?.toLowerCase().includes('joystick') || p.title?.toLowerCase().includes('hall effect'))?.overview as any} path={['overview']} id="" type="" />
                         </div>
                       </div>
-                      <div className="mt-4">
+                      <div className="mt-4 pt-4">
                         {(showcaseProjects.find(p => p.title?.toLowerCase().includes('joystick') || p.title?.toLowerCase().includes('hall effect'))?.duration as any)?.start && (
                           <div className="text-sm font-medium uppercase text-gray-500 mr-2 bg-gray-100 px-2 py-1 rounded-md inline-block">
                              {new Date((showcaseProjects.find(p => p.title?.toLowerCase().includes('joystick') || p.title?.toLowerCase().includes('hall effect'))?.duration as any)?.start).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })} 
@@ -95,17 +95,17 @@ export async function HomePage({data}: HomePageProps) {
                     </div>
                  </div>
                  <div className="w-full xl:w-1/2 flex items-start justify-center p-2">
-                    <img src="/joystick.png" className="w-full h-auto object-contain rounded-2xl bg-white" alt="Joystick" />
+                    <img src="/joystick.png" className="max-w-full h-auto max-h-[350px] object-contain rounded-2xl" alt="Joystick" />
                  </div>
              </Link>
           )}
 
           {/* Egyptian Wars Project */}
-          <Link className="flex flex-col xl:flex-row p-4 transition hover:bg-white/40 xl:w-1/2 w-full gap-x-6 items-start" href="/games/egyptian-wars">
+          <Link className="flex flex-col xl:flex-row p-4 transition hover:bg-white/40 xl:w-1/2 w-full gap-x-6 items-stretch" href="/games/egyptian-wars">
                  <div className="w-full xl:w-1/2 flex items-start justify-center p-2">
-                    <img src="https://deckofcardsapi.com/static/img/back.png" className="w-full h-auto max-h-[300px] object-contain rounded-2xl bg-white p-4" alt="Egyptian Wars Thumbnail" />
+                    <img src="https://deckofcardsapi.com/static/img/back.png" className="max-w-full h-auto max-h-[300px] object-contain rounded-2xl" alt="Egyptian Wars Thumbnail" />
                  </div>
-                 <div className="flex w-full xl:w-1/2 items-start pt-2">
+                 <div className="flex w-full xl:w-1/2 items-stretch pt-2">
                     <div className="relative flex w-full flex-col justify-between">
                       <div>
                         <div className="mb-2 text-2xl font-bold font-sans tracking-tight md:text-3xl text-black">Egyptian Wars</div>
@@ -113,9 +113,9 @@ export async function HomePage({data}: HomePageProps) {
                           <p>I implemented this game with HTML, CSS, and JavaScript. You can check out the rules page, set the difficulty, and play 1-on-1 against the bot with the goal of winning all the cards.</p>
                         </div>
                       </div>
-                      <div className="mt-4">
+                      <div className="mt-4 pt-4">
                         <div className="text-sm font-medium uppercase text-gray-500 mr-2 bg-gray-100 px-2 py-1 rounded-md inline-block">
-                          Nov 2022 - Dec 2022
+                          Apr 2026
                         </div>
                       </div>
                     </div>
