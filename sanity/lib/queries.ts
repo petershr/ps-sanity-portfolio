@@ -14,6 +14,8 @@ export const homePageQuery = defineQuery(`
         overview,
         "slug": slug.current,
         title,
+        duration,
+        tags
       }
     },
     title,

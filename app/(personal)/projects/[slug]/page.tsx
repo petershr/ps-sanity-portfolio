@@ -87,7 +87,7 @@ export default async function ProjectSlugRoute({params}: Props) {
         <div className="rounded-md border-0 border-transparent">
           {/* Image  */}
           {data?.title?.toLowerCase().includes('joystick') || data?.title?.toLowerCase().includes('hall effect') ? (
-            <img src="/joystick.png" alt="Joystick Main" className="w-full h-auto object-contain bg-white rounded-2xl" />
+            <img src="/joystick.png" alt="Joystick Main" className="w-full h-auto max-h-[65vh] object-contain bg-white rounded-2xl" />
           ) : (
             <ImageBox
               data-sanity={dataAttribute?.('coverImage')}
@@ -115,7 +115,7 @@ export default async function ProjectSlugRoute({params}: Props) {
 
         {/* Description */}
         {description && (
-          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-6">
+          <div className="prose lg:prose-xl font-geist text-gray-700 max-w-4xl pt-6 prose-headings:mt-10 prose-headings:mb-4 prose-ul:mb-2 prose-ul:mt-2 prose-li:my-0 prose-p:my-3">
             <CustomPortableText
               id={data?._id || null}
               type={data?._type || null}
@@ -132,7 +132,7 @@ export default async function ProjectSlugRoute({params}: Props) {
               <ImageBox
                 image={image}
                 alt={image.alt || 'Project gallery image'}
-                classesWrapper="aspect-square w-full"
+                classesWrapper="relative w-full"
               />
             </div>
           ))}
